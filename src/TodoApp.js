@@ -42,8 +42,8 @@ class TodoApp extends React.Component {
     }
   }
   // 選擇項目編輯
-  edit = todo => {
-    this.setState({editing: todo.id});
+  edit = (todo, input) => {
+    this.setState({editing: todo.id}, () => input.focus());
   }
   // 取消編輯項目選擇
   cancel = () => {
@@ -131,6 +131,7 @@ class TodoApp extends React.Component {
 						value={this.state.newTodo}
             onChange={this.handleChange}
 						onKeyDown={this.handleNewTodoKeyDown}
+            autoFocus={true}
 					/>
 				</header>
         <section className="main">

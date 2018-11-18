@@ -12,8 +12,7 @@ class TodoItems extends React.Component {
     };
   }
   handleEdit = () => {
-    this.props.onEdit(this.props.todo);
-    this.editField.current.focus();
+    this.props.onEdit(this.editField.current);
   }
   handleChange = event => {
     this.setState({
@@ -67,6 +66,7 @@ class TodoItems extends React.Component {
           onChange={this.handleChange}
           onKeyDown={this.handleKeyDown}
           onBlur={this.handleSubmit}
+          // autoFocus={this.props.editing ? true : null}
         />
       </li>
     );
